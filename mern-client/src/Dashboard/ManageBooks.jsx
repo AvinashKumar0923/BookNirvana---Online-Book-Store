@@ -2,11 +2,12 @@ import { Table } from 'flowbite-react'
 import React, { useEffect, useState } from 'react'
 import { Pagination } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const ManageBooks = () => {
     const [allBooks, setAllBooks] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/all-books`)
+        fetch(`${API_URL}/all-books`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);
@@ -17,13 +18,15 @@ const ManageBooks = () => {
     // delete a books
     const handleDelete = (id) => {
         // console.log(id)
-        fetch(`http://localhost:5000/book/${id}`, {
+        fetch(`${API_URL}/book/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             // console.log(data);
             // setAllBooks(data);
+            alert('Book Deleted!');
+            location.reload();
           });
       };
 

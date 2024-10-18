@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { Button, Checkbox, Label, Select, TextInput, Textarea } from 'flowbite-react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const UploadBook = () => {
   const bookCategories = [
@@ -55,7 +56,7 @@ const UploadBook = () => {
       bookPDFURL,
     };
     // console.log(dataObj)
-    fetch("http://localhost:5000/upload-book", {
+    fetch(`${API_URL}/upload-book`, {
       method: "POST",
 
       headers: {

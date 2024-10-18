@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Checkbox, Label, Select, TextInput, Textarea } from 'flowbite-react';
 import { useLoaderData, useParams } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const EditBooks = () => {
   const { id } = useParams();
@@ -62,6 +63,7 @@ const EditBooks = () => {
 
     // update the book object
     fetch(`http://localhost:5000/book/${id}`, {
+    fetch(`${API_URL}/${id}`, {
       method: "PATCH",
 
       headers: {
