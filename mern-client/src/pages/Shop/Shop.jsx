@@ -40,7 +40,7 @@ export default function Shop() {
                 </p>
               </p>
 
-              <button className='px-4 py-2 bg-blue-600 text-white rounded'>Buy Now</button>
+              <button className='px-4 py-2 bg-blue-600 text-white rounded hover:bg-black transition-all ease-in duration-200'>Buy Now</button>
             </Card>)
           }
         </div>
