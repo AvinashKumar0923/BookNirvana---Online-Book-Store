@@ -62,7 +62,6 @@ const EditBooks = () => {
     // console.log(bookObj)
 
     // update the book object
-    fetch(`http://localhost:5000/book/${id}`, {
     fetch(`${API_URL}/${id}`, {
       method: "PATCH",
 
