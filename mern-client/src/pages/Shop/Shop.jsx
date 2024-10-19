@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Card, Spinner } from 'flowbite-react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import SliderBooks from '../Shop/SliderBooks';
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Shop() {
   const {loading } = useContext(AuthContext);
   const [books, setBooks] = useState([]);
 // fetching data
   useEffect(() =>{
-    fetch('http://localhost:5000/all-books')
+    fetch(`${API_URL}/all-books`)
     .then(res => res.json())
     .then(data => setBooks(data))
   }, [loading]);
